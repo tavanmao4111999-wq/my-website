@@ -1,1 +1,38 @@
-
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thông tin nhân viên</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f2f5f9;margin:0;padding:20px}
+.container{max-width:450px;margin:30px auto;background:white;padding:24px;border-radius:14px;box-shadow:0 3px 15px #0001}
+h2{text-align:center;color:#174a8b}
+label{display:block;margin-top:18px;font-weight:bold}
+input{width:100%;box-sizing:border-box;padding:12px;margin-top:8px;border:1px solid #ccd3dd;border-radius:8px;font-size:16px}
+.time{margin-top:20px;padding:14px;background:#edf5ff;border-radius:8px;text-align:center;color:#174a8b;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>THÔNG TIN NHÂN VIÊN</h2>
+<label for="code">Mã nhân viên</label>
+<input id="code" type="text" placeholder="Nhập mã nhân viên">
+<label for="name">Tên nhân viên</label>
+<input id="name" type="text" placeholder="Nhập tên nhân viên">
+<div class="time">
+<div id="date"></div>
+<div id="clock"></div>
+</div>
+</div>
+<script>
+function updateTime(){
+const now=new Date();
+document.getElementById('date').textContent='Ngày: '+now.toLocaleDateString('vi-VN');
+document.getElementById('clock').textContent='Giờ: '+now.toLocaleTimeString('vi-VN');
+}
+updateTime();
+setInterval(updateTime,1000);
+</script>
+</body>
+</html>
